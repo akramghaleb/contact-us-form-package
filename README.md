@@ -34,4 +34,10 @@ php artisan serve
 You can now access the server at http://localhost:8000/contact
 
 <br><br>
-Now go to /contact route
+
+## Screenshots
+
+| Web Screens                         |
+|-------------------------------------|
+| ![Project Screenshot 2](scs/1.png)  |
+| ![Project Screenshot 2](scs/2.png)  |
