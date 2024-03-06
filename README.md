@@ -12,3 +12,17 @@ You can install the package via composer:
 ```bash
 composer require akramghaleb/contact
 ```
+
+And add the service provider in config/app.php:
+
+```php
+AkramGhaleb\Contact\ContactServiceProvider::class,
+```
+
+Publish config:
+
+```
+php artisan vendor:publish --tag=contact-config
+```
+
+Now go to /contact route
