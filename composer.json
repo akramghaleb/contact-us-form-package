@@ -1,0 +1,19 @@
+{
+    "name": "akramghaleb/contact",
+    "description": "This will send email to admin and save contact data in the database",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "AkramGhaleb\\Contact\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "akramghaleb",
+            "email": "46090581+akramghaleb@users.noreply.github.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {}
+}
