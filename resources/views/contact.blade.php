@@ -29,16 +29,16 @@
                 <form action="{{ route('contact') }}" method="POST">
                     @csrf
                     <div class="row gy-4 gy-xl-5 p-4 p-xl-5">
-                        @if(session('message'))
-                        <div class="alert alert-success">
-                            {{ session('message') }}
-                        </div>
-                        @endif
-                        @if(session('error'))
-                        <div class="alert alert-danger" role="alert">
-                            {{ session('error') }}
-                        </div>
-                        @endif
+                        @isset($success)
+                            <div class="alert alert-success">
+                                {{ $success }}
+                            </div>
+                        @endisset
+                        @isset($error)
+                            <div class="alert alert-danger">
+                                {{ $error }}
+                            </div>
+                        @endisset
                         <div class="col-12">
                         <label for="name" class="form-label">Full Name <span class="text-danger">*</span></label>
                         <input type="text" class="form-control" id="name" name="name" value="" required>

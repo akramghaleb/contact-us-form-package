@@ -8,22 +8,28 @@ use App\Http\Controllers\Controller;
 use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
-use Illuminate\Support\Facades\Redirect;
-use Illuminate\Support\Facades\Session;
 
 class ContactController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        return view('contact::contact');
+        if(isset($request->success)){
+            return view('contact::contact' , [
+                'success' => $request->success
+            ]);
+        }else if(isset($request->error)){
+            return view('contact::contact' , [
+                'error' => $request->error
+            ]);
+        }else{
+            return view('contact::contact');
+        }
+
     }
 
     public function send(Request $request)
     {
         try{
-        // Validate the request.
-
-            // php artisan make:mail ContactMail --markdown=contact.email
             Mail::to(config('contact.send_email_to'))->send(
                 new ContactMail(
                         $request->message,
@@ -39,11 +45,14 @@ class ContactController extends Controller
             $contact->message = $request->message;
             $contact->save();
 
-            //Session::flash('message', 'Sent successfully');
-            Redirect::back()->with('message', 'Sent successfully');
+
+            return redirect()->route('contact', [
+                'success' => 'Sent successfully'
+            ]);
         }catch(Exception $exception){
-            //Session::flash('error', 'Error sending contact :( Please try again later');
-            Redirect::back()->with('message', 'Error sending contact :( Please try again later');
+            return redirect()->route('contact', [
+                'error' => 'Error sending contact :( Please try again later'
+            ]);
         }
 
 
