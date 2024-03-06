@@ -13,12 +13,6 @@ You can install the package via composer:
 composer require akramghaleb/contact
 ```
 
-And add the service provider in config/app.php:
-
-```php
-AkramGhaleb\Contact\ContactServiceProvider::class,
-```
-
 Publish config:
 
 ```
