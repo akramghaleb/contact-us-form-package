@@ -31,4 +31,13 @@ Run the database migrations (Set the database connection & Mail connection in .e
 php artisan migrate
 ```
 
+Start the local development server
+
+```
+php artisan serve
+```
+
+You can now access the server at http://localhost:8000/contact
+
+<br><br>
 Now go to /contact route
