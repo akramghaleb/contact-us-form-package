@@ -8,6 +8,13 @@
             "AkramGhaleb\\Contact\\": "src/"
         }
     },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "AkramGhaleb\\Contact\\ContactServiceProvider"
+            ]
+        }
+    },
     "authors": [
         {
             "name": "akramghaleb",
