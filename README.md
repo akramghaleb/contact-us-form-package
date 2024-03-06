@@ -25,4 +25,10 @@ Publish config:
 php artisan vendor:publish --tag=contact-config
 ```
 
+Run the database migrations (Set the database connection & Mail connection in .env before migrating)
+
+```
+php artisan migrate
+```
+
 Now go to /contact route
